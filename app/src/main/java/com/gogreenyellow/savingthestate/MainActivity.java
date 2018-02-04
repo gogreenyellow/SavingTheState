@@ -11,6 +11,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.gogreenyellow.savingthestate.autosaving.AutosavingScrollPositionActivity;
+import com.gogreenyellow.savingthestate.transientstate.TransientStateActivity;
+
 /**
  * Created by wkjan on 04.02.2018.
  */
@@ -40,11 +43,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.mn_autosaving:
+                    case R.id.mn_autosaving: {
                         Intent intent = new Intent(MainActivity.this,
                                 AutosavingScrollPositionActivity.class);
                         startActivity(intent);
                         break;
+                    }
+                    case R.id.mn_transient_state: {
+                        Intent intent = new Intent(MainActivity.this,
+                                TransientStateActivity.class);
+                        startActivity(intent);
+                        break;
+                    }
                 }
                 return false;
             }

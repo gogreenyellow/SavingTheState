@@ -1,9 +1,12 @@
-package com.gogreenyellow.savingthestate;
+package com.gogreenyellow.savingthestate.autosaving;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
+
+import com.gogreenyellow.savingthestate.R;
 
 /**
  * Created by wkjan on 04.02.2018.
@@ -19,5 +22,12 @@ public class AutosavingScrollPositionActivity extends AppCompatActivity {
         setSupportActionBar((Toolbar) findViewById(R.id.aasp_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.autosaving_scroll_title);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home)
+            finish();
+        return super.onOptionsItemSelected(item);
     }
 }

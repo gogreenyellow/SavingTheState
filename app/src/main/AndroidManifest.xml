@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".AutosavingScrollPositionActivity" />
+        <activity android:name=".autosaving.AutosavingScrollPositionActivity" />
+        <activity android:name=".transientstate.TransientStateActivity" />
     </application>
 </manifest>
