@@ -8,4 +8,8 @@
     <item
         android:id="@+id/mn_transient_state"
         android:title="@string/transient_state_title" />
+
+    <item
+        android:id="@+id/mn_dynamically_added_fragments"
+        android:title="@string/dynamically_added_fragments_title" />
 </menu>

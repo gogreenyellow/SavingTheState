@@ -18,5 +18,6 @@
 
         <activity android:name=".autosaving.AutosavingScrollPositionActivity" />
         <activity android:name=".transientstate.TransientStateActivity" />
+        <activity android:name=".dynamicallyreplacedfragments.DynamicallyReplacedFragmentsActivity" />
     </application>
 </manifest>

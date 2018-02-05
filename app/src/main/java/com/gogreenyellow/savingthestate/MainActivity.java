@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.gogreenyellow.savingthestate.autosaving.AutosavingScrollPositionActivity;
+import com.gogreenyellow.savingthestate.dynamicallyreplacedfragments.DynamicallyReplacedFragmentsActivity;
 import com.gogreenyellow.savingthestate.transientstate.TransientStateActivity;
 
 /**
@@ -52,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.mn_transient_state: {
                         Intent intent = new Intent(MainActivity.this,
                                 TransientStateActivity.class);
+                        startActivity(intent);
+                        break;
+                    }
+                    case R.id.mn_dynamically_added_fragments: {
+                        Intent intent = new Intent(MainActivity.this,
+                                DynamicallyReplacedFragmentsActivity.class);
                         startActivity(intent);
                         break;
                     }

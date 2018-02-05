@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dafm_fragment_one"
+        android:title="@string/fragment_one_title" />
+    <item
+        android:id="@+id/dafm_fragment_two"
+        android:title="@string/fragment_two_title" />
+    <item
+        android:id="@+id/dafm_fragment_three"
+        android:title="@string/fragment_three_title" />
+</menu>
