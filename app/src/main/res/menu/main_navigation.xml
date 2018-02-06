@@ -12,4 +12,8 @@
     <item
         android:id="@+id/mn_dynamically_added_fragments"
         android:title="@string/dynamically_added_fragments_title" />
+
+    <item
+        android:id="@+id/mn_fragments_in_viewpager"
+        android:title="@string/fragments_in_viewpager_title" />
 </menu>

@@ -13,6 +13,7 @@ import android.view.MenuItem;
 
 import com.gogreenyellow.savingthestate.autosaving.AutosavingScrollPositionActivity;
 import com.gogreenyellow.savingthestate.dynamicallyreplacedfragments.DynamicallyReplacedFragmentsActivity;
+import com.gogreenyellow.savingthestate.fragmentsinviewpager.FragmentsInViewPagerActivity;
 import com.gogreenyellow.savingthestate.transientstate.TransientStateActivity;
 
 /**
@@ -59,6 +60,12 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.mn_dynamically_added_fragments: {
                         Intent intent = new Intent(MainActivity.this,
                                 DynamicallyReplacedFragmentsActivity.class);
+                        startActivity(intent);
+                        break;
+                    }
+                    case R.id.mn_fragments_in_viewpager: {
+                        Intent intent = new Intent(MainActivity.this,
+                                FragmentsInViewPagerActivity.class);
                         startActivity(intent);
                         break;
                     }
