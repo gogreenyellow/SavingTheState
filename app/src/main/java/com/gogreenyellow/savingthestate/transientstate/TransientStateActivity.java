@@ -13,8 +13,6 @@ import android.widget.TimePicker;
 
 import com.gogreenyellow.savingthestate.R;
 
-import java.time.format.DateTimeFormatter;
-
 /**
  * Created by wkjan on 04.02.2018.
  */
@@ -74,6 +72,10 @@ public class TransientStateActivity extends AppCompatActivity implements TimePic
 
     private void fillTimeTextView(int hour, int minute) {
         TextView timeTextView = findViewById(R.id.ats_time_text_view);
-        timeTextView.setText(getString(R.string.picked_time, hour, minute));
+        String minuteStr = Integer.toString(minute);
+        if (minute < 10) {
+            minuteStr = "0" + minuteStr;
+        }
+        timeTextView.setText(getString(R.string.picked_time, hour, minuteStr));
     }
 }

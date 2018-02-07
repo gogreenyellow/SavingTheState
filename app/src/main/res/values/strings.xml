@@ -5,7 +5,7 @@
     <string name="autosaving_scroll_title">Auto-saving View state</string>
 
     <string name="transient_state_title">Transient state</string>
-    <string name="picked_time">%1$d:%2$d</string>
+    <string name="picked_time">%d:%s</string>
     <string name="selected_time_label">Selected time:</string>
     <string name="pick_time">Pick</string>
 

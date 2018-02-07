@@ -1,39 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/code_background"
     android:orientation="vertical">
 
     <include
         android:id="@+id/ats_toolbar"
         layout="@layout/toolbar" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="8dp">
+    <View
+        android:layout_width="256dp"
+        android:layout_height="256dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/clock_face_bg" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/selected_time_label"
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+    <TextView
+        android:id="@+id/ats_time_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="0:00"
+        android:paddingBottom="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3" />
 
-        <TextView
-            android:id="@+id/ats_time_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="00:00"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            tools:text="15:00" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/selected_time_label"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:layout_above="@id/ats_time_text_view"
+        android:layout_centerHorizontal="true"/>
 
-        <Button
-            android:id="@+id/ats_pick_time_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pick_time" />
-    </LinearLayout>
-</LinearLayout>
+    <Button
+        android:id="@+id/ats_pick_time_button"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pick_time"
+        android:layout_below="@id/ats_time_text_view"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
