@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.gogreenyellow.savingthestate.R;
-import com.gogreenyellow.savingthestate.dynamicallyreplacedfragments.DynamicallyCreatedFragment;
+import com.gogreenyellow.savingthestate.dynamicallyreplacedfragments.SvgFragment;
 
 /**
  * Created by wkjan_000 on 06.02.2018.
@@ -45,7 +45,7 @@ public class SamplePagerAdapter extends FragmentPagerAdapter {
             default:
                 throw new UnsupportedOperationException("Navigation option not supported");
         }
-        return DynamicallyCreatedFragment.newInstance(color, text);
+        return new SvgFragment();
     }
 
     @Nullable

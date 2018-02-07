@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">SavingTheState</string>
+
     <string name="article_text">Custom View: Awesome Pie Chart\n\nAlmost everytime while creating a new view, I use some kind of workflow, which helps me to keep solving process and solution clear and organized. Thanks of that, it turns out that drawing complex widgets isn\'t as hard as it may seem initially.\n\nThis tutorial will show an example approach to making the custom views in Android.\n\n\nCase study: Pie Chart\n\nTo demonstrate a procedure for creating custom control we will use an example of the pie chart (or a circle chart) with some additional visual fireworks.\n\nStep #1: Finding the area\n\nThat is the first thing I always do. Quite often my widgets have 1:1 ratio - they\'re round or square (so in this case). That is how I start finding bounds of largest space for the graphical object inside whole UI element.\n\nCompromises\n\nWhen you\'re creating a custom compound view for your own use, there is no point to implement it flexible and configurable in every way. The key is to answer what is the cost of the implementation of some features and if you really want to have it. For me, this pie chart doesn\'t need to fully support gravity and it would be comfortable to use it in the future if it only would stick to the center of the component area. That is what the getCenteredSquareBounds(float innerCircleRadius, RectF bounds) method will do.\n\nAs you can see in the code, paddings are something I can\'t give up. This implementation has taken a dozen or so minutes and our view keeps native feeling while using this component.</string>
     <string name="autosaving_scroll_title">Auto-saving View state</string>
 
@@ -9,9 +10,24 @@
     <string name="pick_time">Pick</string>
 
     <string name="dynamically_added_fragments_title">Dynamically added fragments</string>
-    <string name="fragment_one_title">Fragment one</string>
-    <string name="fragment_two_title">Fragment two</string>
-    <string name="fragment_three_title">Fragment three</string>
+    <string name="fragment_one_title">Image</string>
+    <string name="fragment_two_title">SVG</string>
+    <string name="fragment_three_title">XML</string>
+
+    <string name="svg_image_title">.SVG</string>
+    <string name="svg_image_part_1">&#60;svg</string>
+    <string name="svg_image_part_2">style=\"width:24px;height:24px\"\nviewBox=\"0 0 24 24\"&#62;</string>
+    <string name="svg_image_part_3">&#60;path</string>
+    <string name="svg_image_part_4">d=\"M12, 16A4, 4 0 0,1 8, 12A4, 4 0 0, 1 12,8A4, 4 0 0, 1 16, 12A4, 4 0 0, 1 12, 16M18.7, 12.4C18.42, 12.24 18.13, 12.11 17.84, 12C18.13, 11.89 18.42, 11.76 18.7, 11.6C20.62, 10.5 21.69, 8.5 21.7, 6.41C19.91, 5.38 17.63, 5.3 15.7, 6.41C15.42, 6.57 15.16, 6.76 14.92, 6.95C14.97, 6.64 15, 6.32 15, 6C15, 3.78 13.79, 1.85 12, 0.81C10.21, 1.85 9, 3.78 9,6C9, 6.32 9.03, 6.64 9.08, 6.95C8.84, 6.75 8.58, 6.56 8.3, 6.4C6.38, 5.29 4.1, 5.37 2.3, 6.4C2.3, 8.47 3.37, 10.5 5.3, 11.59C5.58, 11.75 5.87, 11.88 6.16, 12C5.87, 12.1 5.58, 12.23 5.3, 12.39C3.38, 13.5 2.31, 15.5 2.3, 17.58C4.09, 18.61 6.37, 18.69 8.3, 17.58C8.58, 17.42 8.84, 17.23 9.08, 17.04C9.03, 17.36 9, 17.68 9, 18C9, 20.22 10.21, 22.15 12, 23.19C13.79, 22.15 15, 20.22 15, 18C15, 17.68 14.97, 17.36 14.92, 17.05C15.16, 17.25 15.42, 17.43 15.7, 17.59C17.62, 18.7 19.9, 18.62 21.7, 17.59C21.69, 15.5 20.62, 13.5 18.7, 12.4Z\" fill=\"#FFD3E239\" /&#62;</string>
+    <string name="svg_image_part_5">&#60;/svg&#62;</string>
+
+    <string name="xml_image_title">.XML Vector Drawable</string>
+    <string name="xml_image_part_1">&#60;vector xmlns:android=\"http://schemas.android.com/apk/res/android\"</string>
+    <string name="xml_image_part_2">android:height=\"24dp\"\nandroid:width=\"24dp\"\nandroid:viewportWidth=\"24\"\nandroid:viewportHeight=\"24\"&#62;</string>
+    <string name="xml_image_part_3">&#60;path</string>
+    <string name="xml_image_part_4">android:fillColor=\"#FFD3E239\"\nandroid:pathData=\"M12, 16A4, 4 0 0, 1 8, 12A4, 4 0 0, 1 12, 8A4, 4 0 0, 1 16, 12A4, 4 0 0, 1 12, 16M18.7, 12.4C18.42, 12.24 18.13, 12.11 17.84, 12C18.13, 11.89 18.42, 11.76 18.7, 11.6C20.62, 10.5 21.69, 8.5 21.7, 6.41C19.91, 5.38 17.63, 5.3 15.7,6.41C15.42, 6.57 15.16, 6.76 14.92, 6.95C14.97, 6.64 15, 6.32 15, 6C15, 3.78 13.79, 1.85 12, 0.81C10.21, 1.85 9, 3.78 9, 6C9, 6.32 9.03, 6.64 9.08, 6.95C8.84, 6.75 8.58, 6.56 8.3, 6.4C6.38, 5.29 4.1, 5.37 2.3, 6.4C2.3, 8.47 3.37, 10.5 5.3, 11.59C5.58, 11.75 5.87, 11.88 6.16, 12C5.87, 12.1 5.58, 12.23 5.3,12.39C3.38, 13.5 2.31, 15.5 2.3, 17.58C4.09, 18.61 6.37, 18.69 8.3, 17.58C8.58, 17.42 8.84, 17.23 9.08, 17.04C9.03, 17.36 9, 17.68 9, 18C9, 20.22 10.21, 22.15 12, 23.19C13.79, 22.15 15, 20.22 15, 18C15, 17.68 14.97, 17.36 14.92, 17.05C15.16, 17.25 15.42, 17.43 15.7, 17.59C17.62, 18.7 19.9, 18.62 21.7, 17.59C21.69, 15.5 20.62, 13.5 18.7, 12.4Z" /&#62;</string>
+    <string name="xml_image_part_5">&#60;/vector&#62;</string>
+
 
     <string name="fragments_in_viewpager_title">Fragments in a ViewPager</string>
 

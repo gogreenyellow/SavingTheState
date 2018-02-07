@@ -1,6 +1,5 @@
 package com.gogreenyellow.savingthestate.dynamicallyreplacedfragments;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -23,10 +22,9 @@ public class DynamicallyReplacedFragmentsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dynamically_added_fragments);
 
         if (savedInstanceState == null) {
-            String title = getString(R.string.fragment_one_title);
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.adaf_fragment_container,
-                            DynamicallyCreatedFragment.newInstance(Color.CYAN, title))
+                            new ImageFragment())
                     .commit();
         }
 
@@ -49,29 +47,25 @@ public class DynamicallyReplacedFragmentsActivity extends AppCompatActivity {
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                        int color;
-                        String text;
+                        Fragment fragment;
                         switch (item.getItemId()) {
                             case R.id.dafm_fragment_one:
-                                color = Color.CYAN;
-                                text = getString(R.string.fragment_one_title);
+                                fragment = new ImageFragment();
                                 break;
                             case R.id.dafm_fragment_two:
-                                color = Color.GRAY;
-                                text = getString(R.string.fragment_two_title);
+                                fragment = new SvgFragment();
                                 break;
                             case R.id.dafm_fragment_three:
-                                color = Color.GREEN;
-                                text = getString(R.string.fragment_three_title);
+                                fragment = new XmlFragment();
                                 break;
                             default:
                                 throw new UnsupportedOperationException("Navigation option not supported");
                         }
 
-                        Fragment fragment = DynamicallyCreatedFragment.newInstance(color, text);
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.adaf_fragment_container, fragment)
                                 .commit();
+
                         return true;
                     }
                 });

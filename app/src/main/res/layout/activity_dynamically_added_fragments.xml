@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/code_background">
 
     <include
         android:id="@+id/adaf_toolbar"
@@ -19,6 +20,8 @@
         android:id="@+id/adaf_bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/dynamically_added_fragments_menu" />
+        app:menu="@menu/dynamically_added_fragments_menu"
+        android:background="@android:color/white"
+        android:elevation="4dp"/>
 
 </LinearLayout>

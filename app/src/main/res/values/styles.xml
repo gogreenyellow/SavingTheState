@@ -8,4 +8,37 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="AppTheme.CodeSnippet.Overlay" parent="AppTheme">
+        <item name="android:background">#22000000</item>
+    </style>
+
+    <style name="AppTheme.CodeStyleText">
+        <item name="android:typeface">monospace</item>
+        <item name="android:textColor">#c7ffffff</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Caption</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:paddingRight">4dp</item>
+    </style>
+
+    <style name="AppTheme.CodeStyleText.Title">
+        <item name="android:background">#22ffffff</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+
+    <style name="AppTheme.CodeStyleText.Tab1">
+        <item name="android:paddingStart">24dp</item>
+    </style>
+
+    <style name="AppTheme.CodeStyleText.Tab2">
+        <item name="android:paddingStart">48dp</item>
+    </style>
+
+    <style name="AppTheme.CodeStyleText.Tab3">
+        <item name="android:paddingStart">72dp</item>
+    </style>
+
 </resources>
