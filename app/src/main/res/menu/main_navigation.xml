@@ -16,4 +16,8 @@
     <item
         android:id="@+id/mn_fragments_in_viewpager"
         android:title="@string/fragments_in_viewpager_title" />
+
+    <item
+        android:id="@+id/mn_recycler_view"
+        android:title="@string/recycler_view_title" />
 </menu>

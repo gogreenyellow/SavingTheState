@@ -14,4 +14,7 @@
     <string name="fragment_three_title">Fragment three</string>
 
     <string name="fragments_in_viewpager_title">Fragments in a ViewPager</string>
+
+    <string name="recycler_view_title">RecyclerView and other collections</string>
+    <string name="conntection_problems">Connection problems</string>
 </resources>

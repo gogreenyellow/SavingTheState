@@ -9,11 +9,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.MenuItem;
 
 import com.gogreenyellow.savingthestate.autosaving.AutosavingScrollPositionActivity;
 import com.gogreenyellow.savingthestate.dynamicallyreplacedfragments.DynamicallyReplacedFragmentsActivity;
 import com.gogreenyellow.savingthestate.fragmentsinviewpager.FragmentsInViewPagerActivity;
+import com.gogreenyellow.savingthestate.recycler.FetchListItemsTask;
+import com.gogreenyellow.savingthestate.recycler.RecyclerViewActivity;
 import com.gogreenyellow.savingthestate.transientstate.TransientStateActivity;
 
 /**
@@ -22,7 +25,8 @@ import com.gogreenyellow.savingthestate.transientstate.TransientStateActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    ActionBarDrawerToggle drawerToggle;
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle drawerToggle;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.am_toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawerLayout = findViewById(R.id.am_drawer_layout);
+        drawerLayout = findViewById(R.id.am_drawer_layout);
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout,
                 toolbar, R.string.app_name, R.string.app_name);
         drawerLayout.addDrawerListener(drawerToggle);
@@ -44,32 +48,33 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                Class type;
                 switch (item.getItemId()) {
                     case R.id.mn_autosaving: {
-                        Intent intent = new Intent(MainActivity.this,
-                                AutosavingScrollPositionActivity.class);
-                        startActivity(intent);
+                        type = AutosavingScrollPositionActivity.class;
                         break;
                     }
                     case R.id.mn_transient_state: {
-                        Intent intent = new Intent(MainActivity.this,
-                                TransientStateActivity.class);
-                        startActivity(intent);
+                        type = TransientStateActivity.class;
                         break;
                     }
                     case R.id.mn_dynamically_added_fragments: {
-                        Intent intent = new Intent(MainActivity.this,
-                                DynamicallyReplacedFragmentsActivity.class);
-                        startActivity(intent);
+                        type = DynamicallyReplacedFragmentsActivity.class;
                         break;
                     }
                     case R.id.mn_fragments_in_viewpager: {
-                        Intent intent = new Intent(MainActivity.this,
-                                FragmentsInViewPagerActivity.class);
-                        startActivity(intent);
+                        type = FragmentsInViewPagerActivity.class;
                         break;
                     }
+                    case R.id.mn_recycler_view: {
+                        type = RecyclerViewActivity.class;
+                        break;
+                    }
+                    default:
+                        throw new UnsupportedOperationException("Navigation operation not supported");
                 }
+                Intent intent = new Intent(MainActivity.this, type);
+                startActivity(intent);
                 return false;
             }
         });
@@ -79,5 +84,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         drawerToggle.syncState();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerVisible(Gravity.START)){
+            drawerLayout.closeDrawer(Gravity.START);
+        } else {
+            super.onBackPressed();
+        }
     }
 }
