@@ -10,6 +10,8 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_margin="16dp"
+        android:background="@drawable/recycler_image_bg"
+        android:padding="1dp"
         tools:src="@mipmap/ic_launcher_round" />
 
     <TextView
@@ -32,7 +34,8 @@
         android:ellipsize="end"
         android:maxLines="1"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
-        tools:text="Secondary text" />
+        tools:text="Secondary text"
+        android:textColor="?android:textColorTertiary"/>
 
     <ImageButton
         android:id="@+id/rvi_toggle_button"
