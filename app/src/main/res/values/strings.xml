@@ -2,14 +2,14 @@
     <string name="app_name">SavingTheState</string>
 
     <string name="article_text">Custom View: Awesome Pie Chart\n\nAlmost everytime while creating a new view, I use some kind of workflow, which helps me to keep solving process and solution clear and organized. Thanks of that, it turns out that drawing complex widgets isn\'t as hard as it may seem initially.\n\nThis tutorial will show an example approach to making the custom views in Android.\n\n\nCase study: Pie Chart\n\nTo demonstrate a procedure for creating custom control we will use an example of the pie chart (or a circle chart) with some additional visual fireworks.\n\nStep #1: Finding the area\n\nThat is the first thing I always do. Quite often my widgets have 1:1 ratio - they\'re round or square (so in this case). That is how I start finding bounds of largest space for the graphical object inside whole UI element.\n\nCompromises\n\nWhen you\'re creating a custom compound view for your own use, there is no point to implement it flexible and configurable in every way. The key is to answer what is the cost of the implementation of some features and if you really want to have it. For me, this pie chart doesn\'t need to fully support gravity and it would be comfortable to use it in the future if it only would stick to the center of the component area. That is what the getCenteredSquareBounds(float innerCircleRadius, RectF bounds) method will do.\n\nAs you can see in the code, paddings are something I can\'t give up. This implementation has taken a dozen or so minutes and our view keeps native feeling while using this component.</string>
-    <string name="autosaving_scroll_title">Auto-saving View state</string>
+    <string name="autosaving_scroll_title">Auto-saving</string>
 
-    <string name="transient_state_title">Transient state</string>
+    <string name="transient_state_title">Manual saving</string>
     <string name="picked_time">%d:%s</string>
     <string name="selected_time_label">Selected time:</string>
     <string name="pick_time">Pick</string>
 
-    <string name="dynamically_added_fragments_title">Dynamically added fragments</string>
+    <string name="dynamically_added_fragments_title">Replaced fragments</string>
     <string name="fragment_one_title">Image</string>
     <string name="fragment_two_title">SVG</string>
     <string name="fragment_three_title">XML</string>
@@ -31,6 +31,6 @@
 
     <string name="fragments_in_viewpager_title">Fragments in a ViewPager</string>
 
-    <string name="recycler_view_title">RecyclerView and other collections</string>
+    <string name="recycler_view_title">Collections</string>
     <string name="conntection_problems">Connection problems</string>
 </resources>

@@ -2,6 +2,7 @@ package com.gogreenyellow.savingthestate.recycler;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
@@ -44,11 +45,14 @@ public class SampleAdapter extends RecyclerView.Adapter<SampleAdapter.Holder> {
     public void onBindViewHolder(final Holder holder, int position) {
         final String labelKey = "label";
         final String photoKey = "imageUrl";
+        final String secondaryTextKey = "secondaryText";
+        final String colorKey = "color";
 
         try {
             JSONObject itemJson = model.getJSONObject(position);
 
             holder.labelTextView.setText(itemJson.getString(labelKey));
+            holder.secondaryTextView.setText(itemJson.getString(secondaryTextKey));
             Picasso.with(context)
                     .load(itemJson.getString(photoKey))
                     .resize(250, 250)
@@ -69,6 +73,7 @@ public class SampleAdapter extends RecyclerView.Adapter<SampleAdapter.Holder> {
                         public void onPrepareLoad(Drawable placeHolderDrawable) {
                         }
                     });
+            holder.imageView.setColorFilter(Color.parseColor(itemJson.getString(colorKey)));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -88,11 +93,13 @@ public class SampleAdapter extends RecyclerView.Adapter<SampleAdapter.Holder> {
 
         ImageView imageView;
         TextView labelTextView;
+        TextView secondaryTextView;
 
         public Holder(View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.rvi_image);
             labelTextView = itemView.findViewById(R.id.rvi_primary_text);
+            secondaryTextView = itemView.findViewById(R.id.rvi_secondary_text);
         }
     }
 }
