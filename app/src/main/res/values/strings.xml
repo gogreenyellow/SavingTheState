@@ -1,18 +1,27 @@
 <resources>
-    <string name="app_name">SavingTheState</string>
+    <string name="app_name">Saving The State</string>
 
-    <string name="article_text">Custom View: Awesome Pie Chart\n\nAlmost everytime while creating a new view, I use some kind of workflow, which helps me to keep solving process and solution clear and organized. Thanks of that, it turns out that drawing complex widgets isn\'t as hard as it may seem initially.\n\nThis tutorial will show an example approach to making the custom views in Android.\n\n\nCase study: Pie Chart\n\nTo demonstrate a procedure for creating custom control we will use an example of the pie chart (or a circle chart) with some additional visual fireworks.\n\nStep #1: Finding the area\n\nThat is the first thing I always do. Quite often my widgets have 1:1 ratio - they\'re round or square (so in this case). That is how I start finding bounds of largest space for the graphical object inside whole UI element.\n\nCompromises\n\nWhen you\'re creating a custom compound view for your own use, there is no point to implement it flexible and configurable in every way. The key is to answer what is the cost of the implementation of some features and if you really want to have it. For me, this pie chart doesn\'t need to fully support gravity and it would be comfortable to use it in the future if it only would stick to the center of the component area. That is what the getCenteredSquareBounds(float innerCircleRadius, RectF bounds) method will do.\n\nAs you can see in the code, paddings are something I can\'t give up. This implementation has taken a dozen or so minutes and our view keeps native feeling while using this component.</string>
-    <string name="autosaving_scroll_title">Auto-saving</string>
+    <string name="welcome_text">Welcome to app which demonstrates saving and restoring state.</string>
+    <string name="select_case_text">Select one of the cases in drawer menu and see how the activities should keep the content\'s state.</string>
+    <string name="read_article_button_label">Check the full article</string>
+
+    <string name="lorem_ipsum">\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"</string>
+    <string name="de_finibus">\"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?\"</string>
+    <string name="auto_saving_scroll_title">Auto-saving</string>
+    <string name="auto_saving_header">What\'s done automatically</string>
+    <string name="auto_saving_description">The framework handles saving the simple state of the Views automatically. The only thing which has to be done to trigger this behavior is to add the ids to the Views. We\'ll use a ScrollView as an example. Note that the contents of the screen are the same before and after the rotation. They don\'t change also when the Activity is brought back from the background.</string>
+    <string name="auto_saving_final">This behavior is triggered automatically by the framework. The only task for the developer is to add the `id` to the `Views` which state should be saved.</string>
 
     <string name="transient_state_title">Manual saving</string>
     <string name="picked_time">%d:%s</string>
     <string name="selected_time_label">Selected time:</string>
     <string name="pick_time">Pick</string>
 
+
     <string name="dynamically_added_fragments_title">Replaced fragments</string>
-    <string name="fragment_one_title">Image</string>
-    <string name="fragment_two_title">SVG</string>
-    <string name="fragment_three_title">XML</string>
+    <string name="fragment_image_title">Image</string>
+    <string name="fragment_svg_title">SVG</string>
+    <string name="fragment_xml_title">XML</string>
 
     <string name="svg_image_title">.SVG</string>
     <string name="svg_image_part_1">&#60;svg</string>
@@ -30,7 +39,12 @@
 
 
     <string name="fragments_in_viewpager_title">Fragments in a ViewPager</string>
+    <string name="fragment_one_title">One</string>
+    <string name="fragment_two_title">Two</string>
+    <string name="fragment_tree_title">Tree</string>
+
 
     <string name="recycler_view_title">Collections</string>
     <string name="conntection_problems">Connection problems</string>
+
 </resources>

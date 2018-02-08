@@ -21,7 +21,7 @@ public class AutosavingScrollPositionActivity extends AppCompatActivity {
 
         setSupportActionBar((Toolbar) findViewById(R.id.aasp_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(R.string.autosaving_scroll_title);
+        getSupportActionBar().setTitle(R.string.auto_saving_scroll_title);
     }
 
     @Override

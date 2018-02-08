@@ -6,7 +6,7 @@
     <item
         android:id="@+id/mn_autosaving"
         android:icon="@drawable/ic_auto_fix"
-        android:title="@string/autosaving_scroll_title" />
+        android:title="@string/auto_saving_scroll_title" />
 
     <item
         android:id="@+id/mn_transient_state"

@@ -4,14 +4,14 @@
     <item
         android:id="@+id/dafm_fragment_one"
         android:icon="@drawable/ic_brush"
-        android:title="@string/fragment_one_title" />
+        android:title="@string/fragment_image_title" />
     <item
         android:id="@+id/dafm_fragment_two"
         android:icon="@drawable/ic_svg"
-        android:title="@string/fragment_two_title" />
+        android:title="@string/fragment_svg_title" />
     <item
         android:id="@+id/dafm_fragment_three"
         android:icon="@drawable/ic_xml"
-        android:title="@string/fragment_three_title" />
+        android:title="@string/fragment_xml_title" />
 
 </menu>

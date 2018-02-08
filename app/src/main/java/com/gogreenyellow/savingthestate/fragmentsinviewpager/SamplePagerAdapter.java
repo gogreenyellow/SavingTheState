@@ -32,15 +32,15 @@ public class SamplePagerAdapter extends FragmentPagerAdapter {
         switch (position) {
             case 0:
                 color = Color.CYAN;
-                text = context.getString(R.string.fragment_one_title);
+                text = context.getString(R.string.fragment_image_title);
                 break;
             case 1:
                 color = Color.GRAY;
-                text = context.getString(R.string.fragment_two_title);
+                text = context.getString(R.string.fragment_svg_title);
                 break;
             case 2:
                 color = Color.GREEN;
-                text = context.getString(R.string.fragment_three_title);
+                text = context.getString(R.string.fragment_xml_title);
                 break;
             default:
                 throw new UnsupportedOperationException("Navigation option not supported");
@@ -53,11 +53,11 @@ public class SamplePagerAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return context.getString(R.string.fragment_one_title);
+                return context.getString(R.string.fragment_image_title);
             case 1:
-                return context.getString(R.string.fragment_two_title);
+                return context.getString(R.string.fragment_svg_title);
             case 2:
-                return context.getString(R.string.fragment_three_title);
+                return context.getString(R.string.fragment_xml_title);
         }
         throw new UnsupportedOperationException("Navigation option not supported");
     }
