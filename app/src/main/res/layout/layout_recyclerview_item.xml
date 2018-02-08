@@ -28,6 +28,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/rvi_primary_text"
         android:layout_toEndOf="@id/rvi_image"
+        android:layout_toStartOf="@id/rvi_toggle_button"
+        android:ellipsize="end"
+        android:maxLines="1"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
         tools:text="Secondary text" />
 
@@ -36,9 +39,9 @@
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:layout_alignParentEnd="true"
-        android:padding="12dp"
         android:layout_marginTop="8dp"
         android:background="?selectableItemBackgroundBorderless"
-        android:src="@drawable/favorite_bg_selector" />
+        android:padding="12dp"
+        android:src="@drawable/ic_star_outline" />
 
 </RelativeLayout>

@@ -21,6 +21,7 @@ import org.json.JSONException;
 public class RecyclerViewActivity extends AppCompatActivity implements FetchListItemsTask.Callback {
 
     private static final String RECYCLER_ITEMS_KEY = "recyclerItems";
+    private static final String SELECTION_KEY = "selection";
 
     private SampleAdapter sampleAdapter;
     private FetchListItemsTask fetchListItemsTask;
@@ -39,6 +40,19 @@ public class RecyclerViewActivity extends AppCompatActivity implements FetchList
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         sampleAdapter = new SampleAdapter(this);
         recyclerView.setAdapter(sampleAdapter);
+
+        if (savedInstanceState != null) {
+            String recyclerItemsString = savedInstanceState.getString(RECYCLER_ITEMS_KEY);
+            boolean[] selection = savedInstanceState.getBooleanArray(SELECTION_KEY);
+            if (recyclerItemsString != null) {
+                try {
+                    recyclerItems = new JSONArray(recyclerItemsString);
+                    sampleAdapter.swapModel(recyclerItems, selection);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     @Override
@@ -62,20 +76,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements FetchList
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString(RECYCLER_ITEMS_KEY, recyclerItems.toString());
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        String recyclerItemsString = savedInstanceState.getString(RECYCLER_ITEMS_KEY);
-        if (recyclerItemsString != null) {
-            try {
-                recyclerItems = new JSONArray(recyclerItemsString);
-                sampleAdapter.swapModel(recyclerItems);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
+        outState.putBooleanArray(SELECTION_KEY, sampleAdapter.getSelection());
     }
 
     @Override
@@ -89,7 +90,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements FetchList
     @Override
     public void gotItems(JSONArray items) {
         this.recyclerItems = items;
-        sampleAdapter.swapModel(recyclerItems);
+        sampleAdapter.swapModel(recyclerItems, new boolean[recyclerItems.length()]);
     }
 
     @Override

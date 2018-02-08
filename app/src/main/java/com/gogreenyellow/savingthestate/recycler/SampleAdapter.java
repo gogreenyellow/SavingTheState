@@ -10,8 +10,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import com.gogreenyellow.savingthestate.R;
 import com.squareup.picasso.Picasso;
@@ -27,6 +30,7 @@ import org.json.JSONObject;
 
 public class SampleAdapter extends RecyclerView.Adapter<SampleAdapter.Holder> {
 
+    private boolean[] selection;
     private Context context;
     private JSONArray model;
 
@@ -38,7 +42,18 @@ public class SampleAdapter extends RecyclerView.Adapter<SampleAdapter.Holder> {
     public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context)
                 .inflate(R.layout.layout_recyclerview_item, parent, false);
-        return new Holder(view);
+        final Holder holder = new Holder(view);
+
+        holder.selectionImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position = holder.getAdapterPosition();
+                selection[position] = !selection[position];
+                holder.setSelection(selection[position]);
+            }
+        });
+
+        return holder;
     }
 
     @Override
@@ -53,27 +68,9 @@ public class SampleAdapter extends RecyclerView.Adapter<SampleAdapter.Holder> {
 
             holder.labelTextView.setText(itemJson.getString(labelKey));
             holder.secondaryTextView.setText(itemJson.getString(secondaryTextKey));
-            Picasso.with(context)
-                    .load(itemJson.getString(photoKey))
-                    .resize(250, 250)
-                    .centerCrop()
-                    .into(new Target() {
-                        @Override
-                        public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                            RoundedBitmapDrawable drawable = RoundedBitmapDrawableFactory.create(context.getResources(), bitmap);
-                            drawable.setCircular(true);
-                            holder.imageView.setImageDrawable(drawable);
-                        }
-
-                        @Override
-                        public void onBitmapFailed(Drawable errorDrawable) {
-                        }
-
-                        @Override
-                        public void onPrepareLoad(Drawable placeHolderDrawable) {
-                        }
-                    });
+            holder.loadImage(itemJson.getString(photoKey));
             holder.imageView.setColorFilter(Color.parseColor(itemJson.getString(colorKey)));
+            holder.setSelection(selection[position]);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -84,9 +81,14 @@ public class SampleAdapter extends RecyclerView.Adapter<SampleAdapter.Holder> {
         return model == null ? 0 : model.length();
     }
 
-    public void swapModel(JSONArray jsonArray) {
+    public void swapModel(JSONArray jsonArray, boolean[] selection) {
         this.model = jsonArray;
+        this.selection = selection;
         notifyDataSetChanged();
+    }
+
+    public boolean[] getSelection() {
+        return selection;
     }
 
     class Holder extends RecyclerView.ViewHolder {
@@ -94,12 +96,45 @@ public class SampleAdapter extends RecyclerView.Adapter<SampleAdapter.Holder> {
         ImageView imageView;
         TextView labelTextView;
         TextView secondaryTextView;
+        ImageButton selectionImageButton;
 
         public Holder(View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.rvi_image);
             labelTextView = itemView.findViewById(R.id.rvi_primary_text);
             secondaryTextView = itemView.findViewById(R.id.rvi_secondary_text);
+            selectionImageButton = itemView.findViewById(R.id.rvi_toggle_button);
+        }
+
+        void setSelection(boolean selected) {
+            if (selected) {
+                selectionImageButton.setImageResource(R.drawable.ic_star);
+            } else {
+                selectionImageButton.setImageResource(R.drawable.ic_star_outline);
+            }
+        }
+
+        void loadImage(String photoUrl){
+            Picasso.with(context)
+                    .load(photoUrl)
+                    .resize(250, 250)
+                    .centerCrop()
+                    .into(new Target() {
+                        @Override
+                        public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                            RoundedBitmapDrawable drawable = RoundedBitmapDrawableFactory.create(context.getResources(), bitmap);
+                            drawable.setCircular(true);
+                            imageView.setImageDrawable(drawable);
+                        }
+
+                        @Override
+                        public void onBitmapFailed(Drawable errorDrawable) {
+                        }
+
+                        @Override
+                        public void onPrepareLoad(Drawable placeHolderDrawable) {
+                        }
+                    });
         }
     }
 }
