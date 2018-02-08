@@ -2,7 +2,6 @@ package com.gogreenyellow.savingthestate.recycler;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
@@ -10,11 +9,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 import com.gogreenyellow.savingthestate.R;
 import com.squareup.picasso.Picasso;
@@ -61,7 +58,6 @@ public class SampleAdapter extends RecyclerView.Adapter<SampleAdapter.Holder> {
         final String labelKey = "label";
         final String photoKey = "imageUrl";
         final String secondaryTextKey = "secondaryText";
-        final String colorKey = "color";
 
         try {
             JSONObject itemJson = model.getJSONObject(position);
@@ -69,7 +65,6 @@ public class SampleAdapter extends RecyclerView.Adapter<SampleAdapter.Holder> {
             holder.labelTextView.setText(itemJson.getString(labelKey));
             holder.secondaryTextView.setText(itemJson.getString(secondaryTextKey));
             holder.loadImage(itemJson.getString(photoKey));
-            holder.imageView.setColorFilter(Color.parseColor(itemJson.getString(colorKey)));
             holder.setSelection(selection[position]);
         } catch (JSONException e) {
             e.printStackTrace();
