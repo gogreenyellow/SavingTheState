@@ -92,7 +92,7 @@ public class SampleAdapter extends RecyclerView.Adapter<SampleAdapter.Holder> {
         public Holder(View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.rvi_image);
-            labelTextView = itemView.findViewById(R.id.rvi_label);
+            labelTextView = itemView.findViewById(R.id.rvi_primary_text);
         }
     }
 }
