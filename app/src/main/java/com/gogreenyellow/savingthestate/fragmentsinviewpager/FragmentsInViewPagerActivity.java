@@ -11,7 +11,11 @@ import android.view.MenuItem;
 import com.gogreenyellow.savingthestate.R;
 
 /**
- * Created by wkjan_000 on 05.02.2018.
+ * The Activity demonstrates how to save the selected page and Fragment on lifecycle events.
+ *
+ * The most of work is done in SamplePagerAdapter.java
+ *
+ * @author wjanuszek
  */
 
 public class FragmentsInViewPagerActivity extends AppCompatActivity {

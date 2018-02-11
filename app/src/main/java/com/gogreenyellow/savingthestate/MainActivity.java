@@ -22,9 +22,11 @@ import com.gogreenyellow.savingthestate.recycler.RecyclerViewActivity;
 import com.gogreenyellow.savingthestate.transientstate.TransientStateActivity;
 
 /**
- * Created by wkjan on 04.02.2018.
+ * The central point of the app. Displays a welcome message and lets the user navigate to all the
+ * places.
+ *
+ * @author wjanuszek
  */
-
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;

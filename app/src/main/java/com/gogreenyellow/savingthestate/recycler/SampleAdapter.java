@@ -22,13 +22,21 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * Created by wkjan_000 on 07.02.2018.
+ * The sample adapter.
+ *
+ * @author wjanuszek
  */
-
 public class SampleAdapter extends RecyclerView.Adapter<SampleAdapter.Holder> {
 
+    /**
+     * Holds the user choices.
+     */
     private boolean[] selection;
     private Context context;
+    /**
+     * The server's response.
+     * The app did not require creating any custom models.
+     */
     private JSONArray model;
 
     public SampleAdapter(Context context) {

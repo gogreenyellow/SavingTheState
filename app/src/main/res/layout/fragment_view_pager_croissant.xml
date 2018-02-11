@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="@dimen/large_icon_size"
         android:layout_height="@dimen/large_icon_size"
-        android:src="@drawable/ic_croissoint"
+        android:src="@drawable/ic_croissant"
         android:tint="#da9e1c"/>
 
 </LinearLayout>

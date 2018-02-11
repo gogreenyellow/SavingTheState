@@ -9,7 +9,12 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 
 /**
- * Created by wkjan on 04.02.2018.
+ * The dialog which displays time. It is important to use the DialogFragments instead of Dialogs
+ * if you want the lifecycle changes to be handled automatically. The DialogFragments don't
+ * disappear when user rotates the device.
+ *
+ *
+ * @author wjanuszek
  */
 
 public class TimePickerDialogFragment extends DialogFragment {

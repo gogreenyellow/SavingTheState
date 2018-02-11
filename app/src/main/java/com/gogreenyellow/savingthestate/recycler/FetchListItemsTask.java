@@ -15,9 +15,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- * Created by wkjan_000 on 07.02.2018.
+ * The AsyncTask fetches the example data from the API.
+ *
+ * @author wjanuszek
  */
-
 public class FetchListItemsTask extends AsyncTask<Void, Void, JSONArray> {
 
     private WeakReference<Callback> callback;

@@ -11,16 +11,15 @@ import android.view.ViewGroup;
 import com.gogreenyellow.savingthestate.R;
 
 /**
- * Created by Paulina on 07.02.2018.
+ * Sample Fragment displaying an image.
+ *
+ * @author paulina_glab
  */
-
 public class ImageFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_dynamically_added_image, container, false);
-
-        return root;
+        return inflater.inflate(R.layout.fragment_dynamically_added_image, container, false);
     }
 }

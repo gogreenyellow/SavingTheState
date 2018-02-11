@@ -1,17 +1,17 @@
 package com.gogreenyellow.savingthestate.fragmentsinviewpager;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.gogreenyellow.savingthestate.R;
-import com.gogreenyellow.savingthestate.dynamicallyreplacedfragments.SvgFragment;
 
 /**
- * Created by wkjan_000 on 06.02.2018.
+ * A sample adapter
+ *
+ * @author wjanuszek
  */
 
 public class SamplePagerAdapter extends FragmentPagerAdapter {
@@ -27,9 +27,16 @@ public class SamplePagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
+        /*
+            The Fragments in the ViewPager shouldn't be created outside of the Adapter and passed
+            into it. It causes some issues with lifecycle handling.
+
+            The simplest solution is letting the ViewPager manage creation and restoring the correct
+            Fragments, like below.
+         */
         switch (position) {
             case 0:
-                return new CroissointFragmnet();
+                return new CroissantFragment();
             case 1:
                 return new PearFragment();
             case 2:

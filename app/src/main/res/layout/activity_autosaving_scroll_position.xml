@@ -8,6 +8,18 @@
         android:id="@+id/aasp_toolbar"
         layout="@layout/toolbar" />
 
+    <!--
+        Adding the id to the Views which have to save their state
+        is the key to make them do it automatically.
+
+
+        It'll work fine for the items like EditText which will
+        preserve the user input, however some view types
+        need additional actions to be taken,
+        for example, if you want to make the TextViews save
+        their state automatically, you'll have to set
+        android:freezesText="true" for them.
+    -->
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/aasp_scroll_view"
         android:layout_width="match_parent"

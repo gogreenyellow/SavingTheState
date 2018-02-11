@@ -11,14 +11,15 @@ import android.view.ViewGroup;
 import com.gogreenyellow.savingthestate.R;
 
 /**
- * Created by wkjan_000 on 11.02.2018.
+ * Sample Fragment showing a croissant image.
+ *
+ * @author paulina_glab
  */
-
-public class CroissointFragmnet extends Fragment {
+public class CroissantFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_view_pager_croissoint, container, false);
+        return inflater.inflate(R.layout.fragment_view_pager_croissant, container, false);
     }
 }

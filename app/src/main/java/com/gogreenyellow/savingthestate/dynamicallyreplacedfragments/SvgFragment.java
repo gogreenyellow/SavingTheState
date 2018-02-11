@@ -12,16 +12,15 @@ import android.widget.TextView;
 import com.gogreenyellow.savingthestate.R;
 
 /**
- * Created by wkjan_000 on 05.02.2018.
+ * Sample Fragment displaying the SVG file data.
+ *
+ * @author paulina_glab
  */
-
 public class SvgFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_dynamically_added_svg, container, false);
-
-        return root;
+        return inflater.inflate(R.layout.fragment_dynamically_added_svg, container, false);
     }
 }

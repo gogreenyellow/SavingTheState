@@ -12,15 +12,25 @@ import android.view.MenuItem;
 import com.gogreenyellow.savingthestate.R;
 
 /**
- * Created by wkjan_000 on 05.02.2018.
+ * The Activity demonstrates how to avoid resetting/changing the displayed Fragment on lifecycle
+ * changes without any complicated operations.
+ *
+ * @author wjanuszek
  */
-
 public class DynamicallyReplacedFragmentsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dynamically_added_fragments);
 
+        /*
+            Verification if the savedInstanceState is null is the key to avoid problems.
+            The value is null only when the Activity is created for the first time, so we
+            add the first Fragment to the Activity in this case.
+
+            A value different than null means that the Activity is being recreated,
+            so the FragmentManager will handle restoring the correct Fragment for us.
+         */
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.adaf_fragment_container,

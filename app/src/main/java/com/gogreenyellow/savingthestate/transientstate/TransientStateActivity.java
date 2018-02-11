@@ -14,9 +14,10 @@ import android.widget.TimePicker;
 import com.gogreenyellow.savingthestate.R;
 
 /**
- * Created by wkjan on 04.02.2018.
+ * The Activity demonstrates how to save and restore the user input.
+ *
+ * @author wjanuszek
  */
-
 public class TransientStateActivity extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener {
 
     private static final String KEY_HOUR = "hour";
@@ -34,6 +35,13 @@ public class TransientStateActivity extends AppCompatActivity implements TimePic
         getSupportActionBar().setTitle(R.string.transient_state_title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        /*
+            The savedInstanceState is different than null only when Activity is being recreated
+            by the framework.
+
+            The values saved in the onSaveInstanceState() are read and stored in class members and
+            used to fill the UI.
+         */
         if (savedInstanceState != null) {
             hour = savedInstanceState.getInt(KEY_HOUR);
             minute = savedInstanceState.getInt(KEY_MINUTES);
@@ -56,6 +64,12 @@ public class TransientStateActivity extends AppCompatActivity implements TimePic
         return super.onOptionsItemSelected(item);
     }
 
+    /*
+        The method is called when the Activity is brought to background.
+
+        We use it to save the user input which may be needed when the Activity will be brought
+        to foreground once again.
+     */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);

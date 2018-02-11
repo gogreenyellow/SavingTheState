@@ -11,9 +11,10 @@ import android.view.ViewGroup;
 import com.gogreenyellow.savingthestate.R;
 
 /**
- * Created by wkjan_000 on 11.02.2018.
+ * Sample Fragment showing a lime image.
+ *
+ * @author paulina_glab
  */
-
 public class LimeFragment extends Fragment {
 
     @Nullable

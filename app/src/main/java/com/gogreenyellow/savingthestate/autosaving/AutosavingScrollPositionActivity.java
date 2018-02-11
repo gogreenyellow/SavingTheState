@@ -9,9 +9,13 @@ import android.view.MenuItem;
 import com.gogreenyellow.savingthestate.R;
 
 /**
- * Created by wkjan on 04.02.2018.
+ * The Activity demonstrates how to automatically prevent losing the simple state of the
+ * Views on lifecycle changes.
+ *
+ * The crucial part can be found in the activity_autosaving_scroll_position.xml file.
+ *
+ * @author wjanuszek
  */
-
 public class AutosavingScrollPositionActivity extends AppCompatActivity {
 
     @Override
