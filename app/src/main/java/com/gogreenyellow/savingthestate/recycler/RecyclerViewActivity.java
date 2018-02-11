@@ -96,6 +96,6 @@ public class RecyclerViewActivity extends AppCompatActivity implements FetchList
     @Override
     public void failedToGetItems() {
         //TODO: an elegant empty state
-        Toast.makeText(this, R.string.conntection_problems, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.connection_problems, Toast.LENGTH_SHORT).show();
     }
 }

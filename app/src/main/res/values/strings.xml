@@ -39,12 +39,12 @@
 
 
     <string name="fragments_in_viewpager_title">Fragments in a ViewPager</string>
-    <string name="fragment_one_title">One</string>
-    <string name="fragment_two_title">Two</string>
-    <string name="fragment_tree_title">Tree</string>
+    <string name="fragment_croissoint_title">Croissoint</string>
+    <string name="fragment_pear_title">Pear</string>
+    <string name="fragment_lime_title">Lime</string>
 
 
     <string name="recycler_view_title">Collections</string>
-    <string name="conntection_problems">Connection problems</string>
+    <string name="connection_problems">Connection problems</string>
 
 </resources>
