@@ -27,25 +27,16 @@ public class SamplePagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        int color;
-        String text;
         switch (position) {
             case 0:
-                color = Color.CYAN;
-                text = context.getString(R.string.fragment_croissoint_title);
-                break;
+                return new CroissointFragmnet();
             case 1:
-                color = Color.GRAY;
-                text = context.getString(R.string.fragment_pear_title);
-                break;
+                return new PearFragment();
             case 2:
-                color = Color.GREEN;
-                text = context.getString(R.string.fragment_lime_title);
-                break;
+                return new LimeFragment();
             default:
                 throw new UnsupportedOperationException("Navigation option not supported");
         }
-        return new SvgFragment();
     }
 
     @Nullable

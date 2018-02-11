@@ -1,6 +1,7 @@
 package com.gogreenyellow.savingthestate;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.gogreenyellow.savingthestate.autosaving.AutosavingScrollPositionActivity;
 import com.gogreenyellow.savingthestate.dynamicallyreplacedfragments.DynamicallyReplacedFragmentsActivity;
@@ -86,9 +88,15 @@ public class MainActivity extends AppCompatActivity {
         drawerToggle.syncState();
     }
 
+    public void openArticle(View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("http://gogreenyellow.com/articles/saving-restoring-state"));
+        startActivity(intent);
+    }
+
     @Override
     public void onBackPressed() {
-        if (drawerLayout.isDrawerVisible(Gravity.START)){
+        if (drawerLayout.isDrawerVisible(Gravity.START)) {
             drawerLayout.closeDrawer(Gravity.START);
         } else {
             super.onBackPressed();
