@@ -5,20 +5,12 @@ scenarios.
 
 ### Autosaving the View's state 
 
-Demonstrated in `com.gogreenyellow.savingthestate.autosaving` package. It is shown on an example 
-of the `ScrollView` which saves and restores its state automatically after adding an `id` to the 
+The simplest case is autosaving demonstrated in `com.gogreenyellow.savingthestate.autosaving` 
+package. It is shown on an example of the `ScrollView` which saves and restores its state automatically after adding an `id` to the 
 view.
 
 ![Gif showing the auto-saving](http://gogreenyellow.com/github/saving-restoring-state/autosaving_W_opt.gif)  
   
-### Saving the user input 
-
-Shown on an example of time picked by the user in `com.gogreenyellow.savingthestate.transientstate` 
-package. The `TransientStateActivity` saves the user input with `onSaveInstanceState()` and restores
-it from a `Bundle`.
-
-![Gif showing the manual saving](http://gogreenyellow.com/github/saving-restoring-state/dialog_W_opt.gif)  
-
 ### Auto-managing Dialog state on lifecycle changes
 
 The usage of `TimePickerDialogFragment` in `TransientStateActivity` shows that it is worth to
@@ -46,7 +38,7 @@ The `com.gogreenyellow.savingthestate.fragmentsinviewpager` shows how to impleme
 
 ### Collections 
 
-A simple example which demonstrates how to persist the collection view's scroll position and user 
+In `com.gogreenyellow.savingthestate.recycler` you'll find a simple example which demonstrates how to persist the collection view's scroll position and user 
 input when the displayed data is fetched asynchronously.
 
 ![Gif showing saving the collection state](http://gogreenyellow.com/github/saving-restoring-state/collection_W_opt.gif)
