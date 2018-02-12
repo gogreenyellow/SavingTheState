@@ -12,4 +12,12 @@
         android:src="@drawable/ic_pear"
         android:tint="#dcd139"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#FFF25F"
+        android:textColor="#d1c634"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
+        android:padding="16dp"/>
+
 </LinearLayout>
