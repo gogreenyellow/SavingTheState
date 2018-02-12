@@ -9,7 +9,7 @@ Demonstrated in `com.gogreenyellow.savingthestate.autosaving` package. It is sho
 of the `ScrollView` which saves and restores its state automatically after adding an `id` to the 
 view.
 
-![Gif showing the auto-saving](http://gogreenyellow.com/github/saving-restoring-state/autosaving.gif)  
+![Gif showing the auto-saving](http://gogreenyellow.com/github/saving-restoring-state/autosaving_W_opt.gif.gif)  
   
 ### Saving the user input 
 
@@ -17,7 +17,7 @@ Shown on an example of time picked by the user in `com.gogreenyellow.savingthest
 package. The `TransientStateActivity` saves the user input with `onSaveInstanceState()` and restores
 it from a `Bundle`.
 
-![Gif showing the manual saving](http://gogreenyellow.com/github/saving-restoring-state/autosaving_W_opt.gif)  
+![Gif showing the manual saving](http://gogreenyellow.com/github/saving-restoring-state/dialog_W_opt.gif)  
 
 ### Auto-managing Dialog state on lifecycle changes
 
