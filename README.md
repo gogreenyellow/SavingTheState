@@ -1,4 +1,4 @@
-![Header](http://gogreenyellow.com/github/saving-restoring-state/h_save_the_state.png)
+![Header](http://gogreenyellow.com/github/saving-restoring-state/h_save_the_state2.png)
 
 We've chosen the following typical scenarios to demonstrates the Android's behavior:
  - [Autosaving the View's state](https://github.com/gogreenyellow/SavingTheState#autosaving-the-views-state)
