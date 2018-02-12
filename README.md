@@ -9,7 +9,7 @@ Demonstrated in `com.gogreenyellow.savingthestate.autosaving` package. It is sho
 of the `ScrollView` which saves and restores its state automatically after adding an `id` to the 
 view.
 
-![Gif showing the auto-saving](http://gogreenyellow.com/github/saving-restoring-state/autosaving_W_opt.gif.gif)  
+![Gif showing the auto-saving](http://gogreenyellow.com/github/saving-restoring-state/autosaving_W_opt.gif)  
   
 ### Saving the user input 
 
