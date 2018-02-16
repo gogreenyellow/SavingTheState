@@ -1,5 +1,9 @@
 ![Header](http://gogreenyellow.com/github/saving-restoring-state/h_save_the_state2.png)
 
+### The project has been created for the purposes of ['Saving/Restoring the App State'](http://gogreenyellow.com/articles/saving-restoring-state) article.
+
+---
+
 We've chosen the following typical scenarios to demonstrates the Android's behavior:
  - [Autosaving the View's state](https://github.com/gogreenyellow/SavingTheState#autosaving-the-views-state)
  - [Auto-managing Dialog state on lifecycle changes](https://github.com/gogreenyellow/SavingTheState#auto-managing-dialog-state-on-lifecycle-changes)
